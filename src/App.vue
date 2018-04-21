@@ -1,17 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+     <button @click="goTo('/article')">Article</button>
+    <button @click="goTo('/')">Home</button>
+    <AppRouter/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+  methods: {
+    goTo(route){
+      this.$pushRoute(route);
+    }
   }
 }
 </script>
